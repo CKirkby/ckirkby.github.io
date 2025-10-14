@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+		  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+		  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="styles.css">
+
+	<title> Conor Kirkby | Sharkbait </title>
+</head>
+
+<body>
+	<!-- NAVBAR -->
+	<nav>
+	
+		<div class="left">
+			<a href="index.html">Conor Kirkby</a>
+		</div>
+
+		<div class="right">
+
+			<!-- Navbar for github icon -->
+			<a href="https://github.com/CKirkby" target="_blank" rel="noopener noreferrer">
+				<i class="fa-brands fa-github"></i> <!-- Github icon -->
+				<span>Github</span>
+			</a>
+
+			<!-- Navbar for linkedin icon -->
+			<a href="https://www.linkedin.com/in/conor-kirkby-1ba479250" target="_blank" rel="noopener noreferrer">
+				<i class="fa-brands fa-linkedin"></i> <!-- linkedin icon -->
+				<span>LinkedIn</span>
+			</a>
+
+			<!-- Navbar for Email icon -->
+			<a href="mailto:conorkirkby1121@gmail.com" target="_blank">
+				<i class="fa-solid fa-envelope"></i> <!-- Envelope icon -->
+				<span>Email</span>
+			</a>
+
+			<!-- link to CV -->
+			<a href="cv.html">
+				<i class="fa-regular fa-file"></i> <!-- File Icon -->
+				<span>CV</span>
+			</a>
+		</div>
+
+
+	</nav>
+
+    <main>
+		<div class = ProjectTitle>
+			<h2>Sharkbait</h2>
+			<h3>Conor Kirkby</h3>
+		</div>
+
+		 <!-- horizontal media scroll section -->
+  		<section class="media-section">
+			<div class="media-scroll">
+
+				<div class="media-item">
+					<video 
+						src="videos/SharkbaitGameplay.mp4" 
+						controls 
+						style="width: 100%; max-width: 800px; border-radius: 10px;">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+
+				<div class="media-item">
+					<img src="images/SharkbaitProject/sharkbait1.webp" alt="image1">
+				</div>
+
+				<div class="media-item">
+					<img src="images/SharkbaitProject/sharkbait2.webp" alt="image2">
+				</div>
+
+				<div class="media-item">
+					<img src="images/SharkbaitProject/sharkbait3.webp" alt="image3">
+				</div>
+
+				<div class="media-item">
+					<img src="images/SharkbaitProject/sharkbait4.webp" alt="image3">
+				</div>
+			</div>
+
+			<p>Click to Enlarge</p>
+
+				<!-- Lightbox overlay -->
+			<div id="lightbox" class="lightbox">
+				<span class="close">&times;</span>
+				<img class="lightbox-content" id="lightbox-img">
+
+				<button class="prev">&#10094;</button>
+ 				<button class="next">&#10095;</button>
+			</div>
+
+  		</section>
+
+		<section class = "project-description-section">
+			
+			<h2>Project description</h2>
+
+			<p>
+				Sharkbait is a small mobile game I have personally developed, the objective of the game is incredibly simple, eat the fish as they flow down the river, however
+				you must watch out, the turtles are too hard to eat and you will get hurt and lose a life if you eat one, and there are poisonous eels who will make your stomach churn and you will
+				lose score if you eat one. 
+			</p>
+
+			<p>
+				This game includes:
+				<br>
+				<ul>
+					<li>Four different fish to catch or avoid:</li>
+					<ul>
+						<li>Small Fish - Gives 1 point</li>
+						<li>Big Fish - Gives 3 points</li>
+						<li>Turtle - Player loses a life</li>
+						<li>Eel - Player loses score</li>
+					</ul>
+					<li>A scalable difficulty system where the fish get faster and spawn in decreased intervals the more score you get.</li>
+					<li>A simple control system.</li>
+				</ul>
+			</p>
+
+		</section>
+
+		<section class = "project-contribution-section">
+			<h2>Project Contribution</h2>
+
+			<h3>2025 <br>
+			Lead Developer</h3>
+
+			<ul> What I learned:
+				<li>How to use Unity's andriod SDK.</li>
+				<li>How to display and port unity APK projects to a mobile device.</li>
+				<li>A good idea of what performance is like on mobile devices and how to take that into consideration.</li>
+				<li>A good refresher and boost on C#.</li>
+				<li>What development looks like for mobile games.</li>
+				<li>How to use splines in Unity.</li>
+			</ul>
+
+			<ul>What I contributed:
+				<li>Developed a chance system with weights to take entities from an object pool and set them on the spline path</li>
+				<li>Developed a difficulty system to mimic a curve and using modifiers </li>
+				<li>Used splines to develop a lane system</li>
+				<li>Created the UI system to track score, high score and lives</li>
+				<li>Created a health system that uses simple lives</li>
+				<li>Created configurations that allow for customisable fish</li>
+
+			</ul>
+
+			<h2>Bio</h2>
+
+			<p>
+				I made this project mainly as a way to test how mobile development works with Unity as I have never done such a thing before and really
+				wanted to learn. I had such fun making it however that I made a small game out of it. The idea was mainly inspired by a minigame present in the 
+				Jak and Daxter: Precursor Legacy game made by Naughty dog where fish float down a river and you have to catch them with a fishing rod. I loved that growing up
+				and while I couldnt perfectly recreate that, I had fun with the concept!
+			</p>
+
+			<p>
+				The game is simple, the are created using an object pool offscreen and then are chosen at random in intervals to be activated and use the spline to 
+				simulate floating down the river. If the player hits it, it will check the configuration of the fish and decide whether to add score, take score or take a life.
+				If the player misses it, it will go underneath and hit a different collision profile which will return the fish to the object pool. 
+			</p>
+
+			<p>
+				Using a little maths, I created a mimic difficulty curve that increases or decreases as the player's score increases. This directly affects a modifier that 
+				is in use with both the spawn interval and the speed of the spline. This way the speed increases as the game goes on and simulates increased difficulty, capping
+				at a specific amount. 
+			</p>
+
+			<p>
+				It was so much fun to see something I have created being put on my personal phone, it was a different feeling entirely then on PC and having something I can show people
+				or just play on the train is really great. It definitly needs some proper artwork but I love what I have made.
+			</p>
+				
+		</section>
+		
+
+		<!-- A go back button to go to the homeback page -->
+		<div class = "go-back">
+			<a href = "index.html">
+				<span>Go Back</span>
+			</a>				
+		</div>
+
+    </main>
+
+	<script>
+		const lightbox = document.getElementById('lightbox');
+		const lightboxImg = document.getElementById('lightbox-img');
+		const closeBtn = document.querySelector('.close');
+		const images = Array.from(document.querySelectorAll('.media-item img'));
+		const prevBtn = document.querySelector('.prev');
+		const nextBtn = document.querySelector('.next');
+
+		let currentIndex = 0;
+
+		// Open the lightbox when an image is clicked
+		images.forEach((img, index) => {
+			img.addEventListener('click', () => {
+			currentIndex = index;
+			showImage();
+			lightbox.style.display = 'flex';
+			});
+		});
+
+		// Function to show the image at currentIndex
+		function showImage() {
+			lightboxImg.src = images[currentIndex].src;
+		}
+
+		// Next and previous buttons
+		nextBtn.addEventListener('click', (e) => {
+			e.stopPropagation(); // prevent closing the lightbox when clicking button
+			currentIndex = (currentIndex + 1) % images.length;
+			showImage();
+		});
+
+		prevBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			currentIndex = (currentIndex - 1 + images.length) % images.length;
+			showImage();
+		});
+
+		// Close when clicking the "×"
+		closeBtn.addEventListener('click', () => {
+			lightbox.style.display = 'none';
+		});
+
+		// Close when clicking outside the image
+		lightbox.addEventListener('click', (e) => {
+			if (e.target === lightbox) {
+			lightbox.style.display = 'none';
+			}
+		});
+</script>
+
+</body>
+
+
+
+</html>

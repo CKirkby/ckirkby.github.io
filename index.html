@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+		  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+		  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="styles.css">
+
+	<title>Conor Kirkby | Game Programmer</title>
+</head>
+<body>
+	<!-- NAVBAR -->
+	<nav>
+	
+		<div class="left">
+			<a href="index.html">Conor Kirkby</a>
+		</div>
+
+		<div class="right">
+
+			<!-- Navbar for github icon -->
+			<a href="https://github.com/CKirkby" target="_blank" rel="noopener noreferrer">
+				<i class="fa-brands fa-github"></i> <!-- Github icon -->
+				<span>Github</span>
+			</a>
+
+			<!-- Navbar for linkedin icon -->
+			<a href="https://www.linkedin.com/in/conor-kirkby-1ba479250" target="_blank" rel="noopener noreferrer">
+				<i class="fa-brands fa-linkedin"></i> <!-- linkedin icon -->
+				<span>LinkedIn</span>
+			</a>
+
+			<!-- Navbar for Email icon -->
+			<a href="mailto:conorkirkby1121@gmail.com" target="_blank">
+				<i class="fa-solid fa-envelope"></i> <!-- Envelope icon -->
+				<span>Email</span>
+			</a>
+
+			<!-- link to CV -->
+			<a href="cv.html">
+				<i class="fa-regular fa-file"></i> <!-- File Icon -->
+				<span>CV</span>
+			</a>
+		</div>
+
+
+	</nav>
+
+	<main>
+		<!-- SECTION 1: Bio -->
+		<section class = "bio-section">
+			
+			<!-- Creates a small bio and paragraph description -->
+			<div class = "text">
+				<h2> Hi, Im Conor! </h2>
+				<p>A game programmer and developer passionate about creating games. I specialize in Unreal Engine and Unity,
+				and I’ve worked with a professional indie studio as well as on numerous personal projects to improve my skills. 
+				I’m always looking for new opportunities, so please don’t hesitate to reach out to me on LinkedIn or by email!</p>
+
+				<!-- Creates the links underneath the bio -->
+				<div class="links">
+
+					<!-- link to skills section -->
+					<a href="#skills">
+						<i class="fa-solid fa-code"></i> <!-- Code Icon -->
+						<span> Skills </span>
+					</a>
+
+					<!-- link to about me section -->
+					<a href="#aboutme">
+						<i class="fa-solid fa-user"></i> <!-- User Icon -->
+						<span> About Me </span>
+					</a>
+
+					<!-- link to contact me section 
+					<a href="#contact">
+						<i class="fa-solid fa-envelope"></i>  Envelope Icon -->
+						<!--<span> Contact </span>
+					</a>-->
+
+					<a href="#projects">
+						<i class="fa-solid fa-diagram-project"></i>
+						<span>Projects</span>
+
+					</a>
+
+				</div>
+			</div>
+
+			<!-- Headshot image on the right side of the page -->
+			<div class = "headshot">
+				<img src = "images/headshot.webp" alt="conor kirkby headshot">
+			</div>
+
+		</section>
+
+		<!-- SECTION 2: Skills -->
+		<section id="skills" class = "skills-section">.
+		
+			<h2>Skills</h2>
+
+			<!-- Creating the cells for the skills -->
+			<div class = "cells">
+
+				<!-- cell for unreal engine logo -->
+				<div class = "cell">
+					<img src = "images/unreal-logo.webp" alt = "unreal engine logo">
+					<span> Unreal Engine</span>
+				</div>
+
+				<!-- cell for unity engine logo -->
+				<div class = "cell">
+					<img src = "images/unity-logo.webp" alt = "unity engine logo">
+					<span> Unity </span>
+				</div>
+			</div>
+
+			<div class = "cells">
+				<!-- cell for c++ logo -->
+				<div class = "cell">
+					<img src = "images/c++-icon.webp" alt = "c++ logo">
+					<span></span>
+				</div>
+				
+				<!-- cell for c# logo -->
+				<div class = "cell">
+					<img src = "images/sharp-icon.webp" alt = "c# logo">
+					<span></span>
+				</div>
+
+				<!-- Cell for HTML logo-->
+				<div class = "cell">
+					<img src = "images/htmllogo.webp" alt = "html logo">
+					<span>HTML</span>
+				</div>
+
+				<!-- Cell for CSS logo-->
+				<div class = "cell">
+					<img src = "images/csslogo.webp" alt = "css logo">
+					<span>CSS</span>
+				</div>
+			</div>
+
+
+			<div class = "text">
+				
+			</div>		
+		
+		</section>
+
+		<!-- Section 3: Projects -->
+		 
+		<section id="projects" class="projects-section">
+			<h2>Project Showcase</h2>
+
+			<!-- Creating the cells for the skills -->
+			<div class = "cells">
+
+				<!-- cell for Catastrophic -->
+				<div class = "cell" id="catastophic">
+					<img src = "images/catastrophic-logo.gif" alt = "catastrophic-logo">
+					
+					<span> Cat-A-Strophic</span>
+
+					<div class= "buttons">
+						<a href="https://store.steampowered.com/app/3601970/CATASTROPHIC" target="_blank">
+							<i class="fa-brands fa-steam"></i> <!-- steam Icon -->
+						</a>
+
+						<a href="https://purrpointproductions.itch.io/cat-a-strophic" target="_blank">
+							<i class="fa-brands fa-itch-io"></i> <!-- itchio Icon -->
+						</a>
+
+						<a href="catastrophic.html" id="investigate">
+							<i class="fa-solid fa-magnifying-glass"></i> <!-- Magnify glass icon -->
+						</a>
+					</div>			
+				</div>
+
+				<!-- cell for Sharkbait -->
+				<div class = "cell" id="sharkbait">
+					<img src = "images/sharkbait-logo.webp" alt = "sharkbait-logo">
+					
+					<span> Shark Bait </span>
+
+					<div class= "buttons">
+						<a href="https://github.com/CKirkby/Shark-Bait" target="_blank">
+							<i class="fa-brands fa-github"></i> <!-- github Icon -->
+						</a>
+
+						<a href="sharkbait.html" id="investigate">
+							<i class="fa-solid fa-magnifying-glass"></i> <!-- Magnify glass icon -->
+						</a>
+					</div>			
+				</div>
+
+				<!-- cell for Dark Alma -->
+				<div class = "cell" id="darkalma">
+					<img src = "images/darkalma-logo.gif" alt = "darkalma-logo">
+					
+					<span> Dark Alma </span>
+
+					<div class= "buttons">
+						<a href="https://wreckz-studios.itch.io/dark-alma" target="_blank">
+							<i class="fa-brands fa-itch-io"></i> <!-- itchio Icon -->
+						</a>
+
+						<a href="darkalma.html">
+							<i class="fa-solid fa-magnifying-glass" id="investigate"></i> <!-- Magnify glass icon -->
+						</a>
+					</div>			
+				</div>
+			</div>
+
+			<!-- A view all button to go to the projects page -->
+			<div class = "view-all">
+				<a href = "projects.html">
+					<span>View All</span>
+				</a>				
+			</div>
+
+		</section>
+
+		<!-- SECTION 4: About Me -->
+		<section id="aboutme" class = "aboutme-section">
+
+			<h2>About Me</h2>
+
+			<div class = "group">
+				<div class = "person-details">
+					<img src = "images/headshot2.webp">
+					<p> Conor Kirkby</p>
+					<p> Programmer | Developer </p>
+				</div>	
+
+				<div class = "text">
+
+					<h3>Education</h3>
+
+					<div class = "education-part">
+						<p>University: <strong>SAE Institute London</strong>
+							<br>
+							Degree: <strong>Bachelors(Hons) in Computer Science</strong>
+							<br>
+							Result: <strong>1st</strong>
+						</p>
+					</div>
+
+					<h3>Bio</h3>
+
+					<p>
+						I grew up in the North of England and have been playing games since I was very young. A few years ago I decided I wanted to 
+						persue a career in making video games. Despite having no knowledge of programming, I decided to move to London to attend SAE institute
+						and complete a course in games programming. This was extremely successful as I learned the basics and more and also finished with a first. 
+					</p>
+
+					<p>
+						Fast forwarding to now I have a great love for programming and creating projects. I wish to be a part of something I can pour my heart into. I am 
+						so excited to get dug into the industry, meeting amazing people and programming amazing games that everyone can play. 
+					</p>
+
+					<p>
+						I love games that are character focused, such as Dragon Age, Mass Effect, Final Fantasy, Baldurs Gate, Metal Gear etc... Characters to me are the most important part of the story, whether
+						they are heroes, villians or in-between. I always love to meet the characters and figure out their backstories and in the future I want to be a part of teams that makes
+						these type of games. 
+					</p>
+
+					<p>
+						When I think of games, I always think of the countless hours of fun I have had getting lost in worlds, characters, combat, puzzles and everything else. I want to give other people
+						the same feeling and I am so eager to be a part of something and contribute everything I can to making the best type of games possible. 
+					</p>
+
+					<p> 
+						Favourite Game: <strong>Final Fantasy 7 Remake</strong> <br>
+						Favoutite Series: <strong>Dark Souls</strong> <br>
+						Favourite Genre: <strong>RPG</strong> <br>
+						Game that gave me the most scares: <strong>The Mortuary Assistant</strong>
+					</p>
+				
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 5: Contact 
+		<section id="contact" class = "contact-section">
+			<h2>Contact (DOES NOT WORK YET)</h2>
+
+			<div class = "group">
+			
+				<div class = "text">
+					Doesnt work
+				</div>
+
+				<form>
+					Creates an email form section -->
+					<!--<label for = "name">DOESNT WORK</label>
+
+					<input type = "text" id = "name">
+					
+					<label for="email">DOESNT WORK</label>
+					<input type = "email" id = "email">
+					
+					<label for="message">DOESNT WORK</label>
+					<textarea id = "message" cols="30" rows="10"></textarea>
+
+					<button type = "submit">Send Message</button>
+				</form>
+
+			</div>
+		
+		</section> -->
+
+		<!-- SECTION 6: Website Upgrades -->
+
+		<section id="websiteupdates" class="updates-section"> 
+			
+			<h2>Incoming Updates to portfolio: </h2>
+
+			<ul>
+
+				<li> Pages for each project detailing what it is, my contributions, any images / videos etc... (In Progress)
+				<li> A section linked to my youtube page where I will start posting new videos about personal game development
+
+			</ul>
+
+		</section>
+
+	</main>
+
+</body>
+</html>

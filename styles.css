@@ -1,0 +1,1075 @@
+:root {
+	--text-color: rgb(255, 255, 255);
+	--link-color: #29cd31;
+	/*#4a76ee*/
+	--background-color: #323136;
+	--navbar-hovercolor: rgb(163, 163, 122);
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html 
+{
+	scroll-behavior: smooth;
+
+	/*This stuff controls margins */
+	/*background-image: url(images/158f0c206c1106e7b4dd49f109bdb64e.gif);
+	background-size: cover;
+  	background-position: center;
+  	background-repeat: repeat;*/
+}
+
+body 
+{
+	font-family: 'Inter', sans-serif;
+	background-color: var(--background-color);
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+a 
+{
+	color: var(--link-color);
+	text-decoration: none;
+}
+
+/* NAVBAR */
+
+nav /*Whole Nav bar*/
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 0 50px;
+	height: 100px;
+	
+	background-color: rgb(24, 23, 23);
+}
+
+nav .left a /*Left side of the nav bar*/
+{
+	color: var(--text-color);
+	font-size: 22px;
+	font-weight: 600;
+}
+
+nav .right a /*Right side of the nav bar*/
+{
+	color: var(--text-color);
+	margin: 0 10px;
+
+	transition: 0.1s;
+}
+
+nav .right a:hover
+{
+	color: var(--navbar-hovercolor);
+}
+
+nav .right a:last-child /*Email link specifically of the right nav bar*/
+{
+	color: var(--background-color);
+	background-color: var(--text-color);
+	padding: 5px 15px;
+	border-radius: 5px;
+	
+	transition: 0.1s;
+}
+
+nav .right a:last-child:hover
+{
+	background-color: var(--navbar-hovercolor);
+}
+
+
+nav .right a span /*Creates a little padding between the icon and the texts of the nav bar*/
+{
+	margin-left: 5px;
+}
+
+
+/* Section 1 - Bio */
+
+	
+.bio-section /*Whole bio section*/
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 0 50px;
+	margin: 50px 0;
+	gap: 40px;
+	margin-bottom: 100px;
+}
+
+.bio-section .text /*Whole bio text section*/
+{
+	flex: 5;
+
+	color: var(--text-color);
+}
+
+.bio-section .text h2 /*Bio Title*/
+{
+	font-size: 45px;
+}
+
+.bio-section .text .links /*bio text links section*/
+{
+	margin-top: 25px;
+}
+
+.bio-section .text .links a /*Whole links section*/
+{
+	display: inline-block; /*Wraps correctly*/
+	padding: 5px 10px;
+	border: 2px solid var(--link-color);
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	transition: 0.1s;
+}
+
+.bio-section .text .links a:hover /*On bio links hover*/
+{
+	color: var(--text-color);
+	border: 2px solid var(--text-color);
+}
+
+.bio-section .headshot  /*bio whole headshot section*/
+{
+	flex: 2;
+	display: flex;
+	justify-content: right;
+}
+
+.bio-section .headshot img /*bio image configs*/
+{
+	width: 350px;
+	border-radius: 70%;
+}
+
+/* SECTION 2 : Skills */
+
+.skills-section
+{
+	padding: 0 50px;
+	margin-bottom: 100px;
+}
+
+.skills-section h2
+{
+	text-align: center;
+	font-size: 35px;
+	color: var(--text-color);
+}
+
+.skills-section .text h3
+{
+	margin-bottom: 10px;
+}
+
+.skills-section .text
+{
+	margin-top: 25px;
+	margin-bottom: 20px;
+	text-align: left;
+
+	color: var(--text-color);
+}
+
+.skills-section .text p
+{
+	margin-bottom: 20px;
+}
+
+.skills-section .cells
+{
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.skills-section .cells .cell
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	width: 200px;
+	padding: 10px 20px;
+	margin: 10px;
+
+	border: 1.5px solid #d3d3d3;
+	border-radius: 5px;
+}
+
+.skills-section .cells .cell img
+{
+	width: 50px;
+	height: 50px;
+
+	object-fit: contain;
+	border-radius: 2px;
+}
+
+.skills-section .cells .cell span
+{
+	font-size: 18px;
+	color: var(--text-color);
+}
+
+/* Section 3: Projects */
+
+.projects-section h2 /* Title*/
+{
+	text-align: center;
+	font-size: 35px;
+	margin-bottom: 50px;
+	color: var(--text-color);
+}
+
+.projects-section .cells /* All project cells */
+{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.projects-section .cells .cell /* Indevidual cells */ 
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	width: 250px;
+	height: 270px;
+	padding: 10px 20px;
+	margin: 10px;
+
+	border: 3px solid white;
+	border-radius: 45px;
+
+	background-color: black;
+}
+
+.projects-section .cells .cell .buttons
+{
+	align-items: center;
+
+	display: flex;
+	flex-direction:row;
+
+	gap: 5px;
+}
+
+.projects-section .cells .cell .buttons a
+{
+	font-size: 30px;
+	color: lightskyblue;
+
+	transition: 0.1s;
+}
+
+.projects-section .cells .cell .buttons a:hover
+{
+	color: white;
+}
+
+.projects-section .cells .cell span /* Text of cells */
+{
+	color: var(--text-color);
+	font-size: 22px;
+	text-align: center;
+}
+
+.projects-section .cells .cell img /* Image of cells*/
+{
+	width: 250px;
+	height: 250px;
+	object-fit: contain;
+}
+
+.projects-section .view-all a /*view all button*/
+{
+	margin-top: 50px;
+	display: flex;
+	justify-content: end;
+}
+
+.projects-section .cells #sharkbait img
+{
+	width: 200px;
+	height: 200px;
+}
+
+.projects-section .cells #darkalma img
+{
+	width: 225px;
+	height: 275px;
+
+	border-radius: 100px;
+}
+
+.projects-section .cells #sanzoku img
+{
+	width: 210px;
+	height: 200px;
+
+	border-radius: 25%;
+}
+
+.projects-section .view-all a span /*view all button text*/
+{
+	text-align: center;
+	margin-right: 25px;
+
+	color: var(--text-color);
+	font-size: 18px;
+
+	border: 7.5px solid black;
+	border-radius: 65px;
+
+	background-color: black;
+
+	transition: 0.1s;
+}
+
+.projects-section .view-all a span:hover
+{
+	border-color: grey;
+	background-color: grey;
+}
+
+
+/* Section 4: About Me */
+
+.aboutme-section 
+{
+	padding: 0 50px;
+	margin-bottom: 100px;
+	margin-top: 100px;
+}
+
+.aboutme-section h2
+{
+	font-size: 35px;
+	margin-bottom: 30px;
+	color: var(--text-color);
+}
+
+.aboutme-section .group
+{
+	display: flex;
+	align-items: center;
+	gap: 50px;
+}
+
+.aboutme-section .group .person-details
+{
+	text-align: center;
+	flex: 2;
+	color: var(--text-color);
+}
+
+.aboutme-section .group .person-details img 
+{
+	width: 200px;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: 50%;
+
+	margin-bottom: 10px;
+}
+
+.aboutme-section .group .person-details p
+{
+	font-weight: 600;
+}
+
+.aboutme-section .group .person-details p:last-child
+{
+	font-weight: normal;
+}
+
+.aboutme-section .group .text
+{
+	flex: 8;
+	color: var(--text-color);
+}
+
+.aboutme-section .group .text p
+{
+	font-size: 17px;
+
+	margin-bottom: 2em;
+}
+
+.aboutme-section .group .text h3
+{
+	margin-bottom: 20px;
+}
+
+.aboutme-section .group .text .education-part
+{
+	color: var(--text-color);
+}
+
+/* Section 5: Contact Me */
+
+.contact-section 
+{
+	padding: 0 50px;
+	margin-bottom: 100px;
+}
+
+.contact-section h2
+{
+	font-size: 35px;
+}
+
+.contact-section .group
+{
+	display: flex;
+	gap: 50px;
+}
+
+.contact-section .group .text
+{
+	flex: 3;
+	margin-top: 20px;
+}
+
+.contact-section .group form
+{
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-section .group form input, .contact-section .group form textarea
+{
+	font-family: 'Global User Interface', sans-serif;
+	border: 2px solid var(--link-color);
+	background-color: transparent;
+	padding: 10px;
+	margin-bottom: 15px;
+
+	outline: none;
+	resize: none;
+}
+
+.contact-section .group form button
+{
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+	color: white;
+	background-color: var(--link-color);
+
+	border: none;
+	height: 50px;
+
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+.contact-section .group form button:hover
+{
+	filter: brightness(.9);
+}
+
+/* Section 6 Website updates */
+
+.updates-section
+{
+	padding: 0 50px;
+	margin-bottom: 100px;
+	margin-top: 100px;
+
+	display: none;
+}
+
+.updates-section h2
+{ 
+	font-size: 35px;
+	margin-bottom: 50px;
+
+	color: var(--text-color);
+}
+
+.updates-section ul
+{
+	margin-left: 30px;
+	font-size: 20px;
+	color: var(--text-color);
+}
+
+/* All Projects Section */
+
+.projects-section #all-projects-title
+{
+	margin-top: 50px;
+}
+
+.projects-section #professional-title
+{
+	font-size: 30px;
+}
+
+.projects-section #personal-title
+{
+	margin-top: 50px;
+	font-size: 30px;
+}
+
+.projects-section #uni-title
+{
+	margin-top: 50px;
+	font-size: 30px;
+}
+
+.projects-section #bone-zone img
+{
+	width: 225px;
+	height: 225px;
+
+	border-radius: 25%;
+}
+
+.projects-section #dark-frost img
+{
+	width: 225px;
+
+	border-radius: 25%;
+}
+
+.projects-section #elemental img
+{
+	width: 225px;
+
+	border-radius: 40%;
+}
+
+.projects-section #neon-racer img
+{
+	width: 225px;
+}
+
+.projects-section #treasure-hunter img
+{
+	width: 200px;
+	height: 150px;
+
+	border-radius: 25%;
+}
+
+.projects-section #gamejam-title
+{
+	margin-top: 50px;
+	font-size: 30px;
+}
+
+.projects-section #panda img
+{
+	width: 200px;
+}
+
+.projects-section #watery-grave img
+{
+	width: 225px;
+}
+
+.projects-section #run-cat img
+{
+	width: 220px;
+
+	border-radius: 35%;
+}
+
+/* Extra */
+
+.go-back
+{
+	margin-top: 100px;
+	margin-bottom: 150px;
+	display: flex;
+	justify-content: end;
+}
+
+.go-back a span /*Go back button text*/
+{
+	text-align: center;
+	margin-right: 25px;
+
+	color: var(--text-color);
+	font-size: 18px;
+
+	border: 7.5px solid black;
+	border-radius: 65px;
+
+	background-color: black;
+
+	transition: 0.1s;
+}
+
+.go-back a span:hover
+{
+	border-color: grey;
+	background-color: grey;
+}
+
+/* CV Page */
+
+#cv-title
+{
+	font-size: 35px;
+	margin-top: 50px;
+	color: white;
+	text-align: center;
+}
+
+.cv-section
+{
+	display: flex;
+	justify-content: center;
+
+}
+
+.cv-section img
+{
+	margin-top: 75px;
+
+	width: 700px;
+	height: 1000px;
+}
+
+.cv-download-container
+{
+	text-align: center;
+}
+
+.download-cv
+{
+	display: inline-block;
+
+	margin-top: 75px;
+
+    padding: 20px 20px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+
+	text-align: center;
+	
+}
+
+.download-cv:hover 
+{
+    background: #45a049;
+}
+
+@media (max-width: 800px)
+{
+	/*Section 1: Bio*/
+
+	.bio-section .text h2
+	{
+		font-size: 35px;
+	}
+}
+
+@media (max-width: 740px) {
+
+	/*Nav Bar*/
+	nav {
+		padding: 0 20px; /*Sets the nav bar padding to low*/
+	}
+
+	nav .right a 
+	{
+		font-size: 22px; /*Reduces the font size*/
+	}
+
+	nav .right a:last-child 
+	{
+		color: var(--text-color); /*Returns the email logo to normal icon*/
+		background-color: transparent;
+		padding: 0;
+	}
+
+	nav .right a span 
+	{
+		display: none; /*Removes the text so only icons are showing*/
+	}
+	
+	/*Section 1: Bio*/
+
+	.bio-section
+	{
+		flex-direction: column-reverse;
+	}
+
+	.bio-section .headshot img
+	{
+		width: 300px;
+	}
+
+	/*Section 4: About Me*/
+	.aboutme-section
+	{
+		text-align: center;
+	}
+
+	.aboutme-section .group
+	{
+		flex-direction: column;
+	}
+
+	/* Section 5: Contact */
+	.contact-section .group
+	{
+		flex-direction: column;
+	}
+
+	/* CV Page */
+
+	.cv-section img
+	{
+		width: 550px;
+		height: 850px;
+	}
+}
+
+@media (max-width: 600px) /*What will happen when the screen is reduced like on mobile*/ {
+
+	/* Section 1: Bio */
+
+	.bio-section 
+	{
+		padding: 0 20px;
+	}
+
+	.bio-section .text h2
+	{
+		font-size: 30px;
+	}
+
+	/* Section 2: Skills */
+
+	.skills-section
+	{
+		padding: 0 20px;
+	}
+
+	.skills-section .cells .cell span
+	{
+		font-size: 16px;
+	}
+
+	/* Section 4: About Me */
+	.aboutme-section
+	{
+		padding: 0 20px;
+	}
+
+	/* Section 5: Contact */
+	.contact-section 
+	{
+		padding: 0 20px;
+	}
+
+	      .video {
+        width: 300px;
+        height: auto;
+      }
+
+      iframe {
+        height: 170px;
+      }
+}
+
+
+
+/* Section for Project Page*/
+
+.ProjectTitle h2
+{
+	display: flex;
+	justify-content: center;
+
+	font-size: 40px;
+	margin-top: 50px;
+	color: var(--text-color);
+}
+
+.ProjectTitle h3
+{
+	display: flex;
+	justify-content: center;
+
+	font-size: 20px;
+	margin-top: 10px;
+	color: lightgrey;
+}
+
+.ProjectTitle a
+{
+	display: flex;
+	justify-content: center;
+
+	margin-top: 0.5em;
+
+	font-size: 20px;
+	color: lightgrey;
+
+	color: var(--link-color);
+}
+
+.ProjectTitle h3 a
+{
+	display: block;
+	margin: 0.5px;
+}
+
+.project-description-section h2
+{
+	font-size: 28px;
+	margin-top: 50px;
+	margin-left: 20px;
+	color: var(--text-color);
+}
+
+.project-description-section p
+{
+	margin-top: 35px;
+	margin-left: 20px;
+
+	font-size: 20px;
+	margin-bottom: 2em;
+
+	color: var(--text-color);
+}
+
+.project-description-section ul
+{
+	margin-top: 35px;
+	margin-left: 20px;
+
+	font-size: 20px;
+	margin-bottom: 2em;
+	margin-left: 50px;
+
+	color: var(--text-color);
+}
+
+.project-description-section ul li
+{
+	margin-top: 5px;
+}
+
+.project-contribution-section h2
+{
+	font-size: 28px;
+	margin-left: 20px;
+	margin-top: 50px;
+	color: var(--text-color);		
+}
+
+.project-contribution-section h3
+{
+	font-size: 15px;
+	margin-left: 30px;
+	margin-top: 10px;
+	color: lightgrey;		
+}
+
+.project-contribution-section p
+{
+	margin-top: 35px;
+	margin-left: 20px;
+
+	font-size: 20px;
+	margin-bottom: 2em;
+
+	color: var(--text-color);
+}
+
+.project-contribution-section ul
+{
+	margin-top: 35px;
+	margin-left: 20px;
+
+	font-size: 20px;
+	margin-bottom: 2em;
+
+	color: var(--text-color);
+}
+
+.project-contribution-section ul li
+{
+	margin-top: 5px;
+	margin-left: 30px;
+}
+
+.project-contribution-section .extra-links
+{
+	font-size: 20px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+/*Project Media*/
+
+/* Section that holds the scrolling media */
+.media-section {
+  max-width: 90%;
+  margin: 0 auto;
+  background-color: rgb(24, 23, 23);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* keeps scroll bar inside */
+
+  margin-top: 100px;
+}
+
+/* The actual horizontal scroll container */
+.media-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+/* Each media item (image or video) */
+.media-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 320px;
+  height: 180px;
+}
+
+/* Image styling */
+.media-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  cursor: pointer;
+}
+
+/*  Video styling */
+.media-item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* scrollbar*/
+.media-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+.media-scroll::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+.media-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+.media-scroll::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.media-section p
+{
+	font-size: 11px;
+	color: var(--text-color);
+	margin-top: 8px;
+}
+
+/* Lightbox overlay (hidden by default) */
+.media-section .lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image inside the lightbox */
+.media-section .lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Close button (the “×”) */
+.media-section .close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.media-section .prev,
+.media-section .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 25%;
+  user-select: none;
+}
+
+.media-section .prev:hover,
+.media-section .next:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.media-section .prev {
+  left: 40px;
+}
+
+.media-section .next {
+  right: 40px;
+}
+
+#hide
+{
+	display: none;
+}
