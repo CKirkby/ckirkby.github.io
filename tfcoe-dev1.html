@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+		  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+		  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="styles.css">
+
+	<title> Conor Kirkby | Catastophic </title>
+</head>
+
+<body>
+	<!-- NAVBAR -->
+	<nav>
+	
+		<div class="left">
+			<a href="index.html">Conor Kirkby</a>
+		</div>
+
+		<div class="right">
+
+			<!-- Navbar for github icon -->
+			<a href="https://github.com/CKirkby" target="_blank" rel="noopener noreferrer">
+				<i class="fa-brands fa-github"></i> <!-- Github icon -->
+				<span>Github</span>
+			</a>
+
+			<!-- Navbar for linkedin icon -->
+			<a href="https://www.linkedin.com/in/conor-kirkby-1ba479250" target="_blank" rel="noopener noreferrer">
+				<i class="fa-brands fa-linkedin"></i> <!-- linkedin icon -->
+				<span>LinkedIn</span>
+			</a>
+
+			<!-- Navbar for Email icon -->
+			<a href="mailto:conorkirkby1121@gmail.com" target="_blank">
+				<i class="fa-solid fa-envelope"></i> <!-- Envelope icon -->
+				<span>Email</span>
+			</a>
+
+			<!-- link to CV -->
+			<a href="cv.html">
+				<i class="fa-regular fa-file"></i> <!-- File Icon -->
+				<span>CV</span>
+			</a>
+		</div>
+
+
+	</nav>
+
+    <main>
+		<div class = ProjectTitle>
+			<h2>TFCOE: Devlog #1</h2>
+			<h3>Conor Kirkby</h3>
+			<h3>05/11/25</h3>
+		</div>
+
+		 <!-- horizontal media scroll section -->
+  		<section class="media-section">
+			<div class="media-scroll">
+
+				<div class="media-item">
+					<iframe 
+					src="" 
+					title="Devlog1"
+					allowfullscreen>
+					</iframe>
+				</div>
+			</div>
+
+			<p>Click to Enlarge</p>
+
+				<!-- Lightbox overlay -->
+			<div id="lightbox" class="lightbox">
+				<span class="close">&times;</span>
+				<img class="lightbox-content" id="lightbox-img">
+
+				<button class="prev">&#10094;</button>
+ 				<button class="next">&#10095;</button>
+			</div>
+
+  		</section>
+
+		<section class = "project-description-section">
+
+			<h2>TLDR</h2>
+			<Ul>
+				<li>Begun work on the GDD</li>
+				<li>Setup the project in Unreal, Github, Hack n Plan</li>
+				<li>Followed a tutorial to create a based sprite character</li>
+				<li>Used a custom plugin, Paper ZD to create a working 8 directional sprite player character</li>
+				<li>Converted the code I learned from the tutorial into C++</li>
+
+			</Ul>
+			
+			<h2>What Happened</h2>
+
+			<p>
+				Hey everyone, this marks the first devlog for my personal project, The Forgotten City of Echronia. A monumentous occasion. Lets waste no time and get straight into the meat. So what did I do for this session?
+				Of course it was mainly setting up the Unreal Project, Github, GDD and management boards. However I did get do some hands on work with the project. The main thing I needed to do for this at present was to figure out how to
+				use sprites correctly with Unreal. As Unreal is primarily used for 3D it might be an unusual choice as much more lightweight engines such as Unity or Godot exist.
+			</p>
+
+			<p>
+				The answer is simply... Its what I am most comfortable with, although I did spend a while weighting them against each other when deciding if I should make either a 2D or 3D game. In the end I chose the middle choice and went 
+				2.5D. Unreal Engine is not without its hurdles however, so I actually watched a tutorial on how to effectively setup the project and also learned how to use a custom plugin called Paper ZD, which greatly simplifies the process.
+			</p>
+
+			<p>The tutorial I used can be found here and was made by Cobra Code, so a special thank you to them: </br>
+				<ul>
+					<li><a href="https://www.youtube.com/watch?v=h00pEm91ers">Youtube Tutorial Link</a></li>
+				</ul>
+			</p>
+
+			<p>
+				This tutorial helped me create a simple character, that can walk around using 8 Directional movement. I still have not decided if I want to stick with this 8 directions or move to a more simpler
+				4 directional movement system but its something to think about in the future. Once the tutorial was finished, I then took all I had learned and converted it to C++ which marked the end of the first session.
+			</p>
+
+		</section>
+
+		<section class = "project-contribution-section">
+			<h2>Code</h2>
+
+			<!-- Highlight.js stylesheet (choose a theme you like) -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+
+			<!-- Highlight.js core script -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+			<!-- Enable C++ highlighting -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+
+			<script>hljs.highlightAll();</script>
+
+			<div class="code-container">
+				<pre>
+				<code class="language-cpp">
+					#pragma once
+
+					#include "CoreMinimal.h"
+					#include "PaperZDCharacter.h"
+					#include "EnhancedInputSubsystems.h"
+					#include "PlayerCharacter.generated.h"
+
+					/**
+					* 
+					*/
+					UCLASS()
+					class TFCOE_API APlayerCharacter : public APaperZDCharacter
+					{
+						GENERATED_BODY()
+
+						protected:
+
+						// Input Mapping & Actions // 
+						UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input|MappingContext")
+						UInputMappingContext* MappingContext = nullptr;
+						UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input|Actions")
+						UInputAction* MoveAction = nullptr;
+						UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input|Actions")
+						UInputAction* SprintAction = nullptr;
+						UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input|Actions")
+						UInputAction* InteractAction = nullptr;
+
+						// Settings
+						UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings|Movement")
+						float WalkSpeed = 400.0f;
+						UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings|Movement")
+						float SprintSpeed = 700.0f;
+
+						// Components
+						UPROPERTY()
+						UCharacterMovementComponent* MovementComponent = nullptr;
+						
+						// Functions
+						virtual void BeginPlay() override;
+						virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+						void InitialiseMovementComponent();
+						
+						// Input Functions
+						void MoveTrigger(const FInputActionValue& Value);
+						void SprintTrigger();
+						void SprintEnd();
+						void InteractTrigger();
+					};
+				</code>
+			</pre>
+
+			<pre>
+				<code class="language-cpp">
+					#include "PlayerCharacter.h"
+					#include "EnhancedInputComponent.h"
+					#include "GameFramework/CharacterMovementComponent.h"
+
+
+					void APlayerCharacter::BeginPlay()
+					{
+						Super::BeginPlay();
+
+						// Gets the movement component and stores it for future use.
+						InitialiseMovementComponent();
+					}
+
+					// Initialises the player input system
+					void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+					{
+						Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+						if (const APlayerController* PlayerController = Cast<APlayerController>(GetController()))
+						{
+							if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
+							{
+								if (MappingContext)
+								{
+									Subsystem->AddMappingContext(MappingContext, 0);
+								}
+							}
+						}
+
+						// Initialises the action bindings 
+						if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
+						{
+							// Insert Action bindings here
+
+							// Binds the movement action to the input variables
+							if (MoveAction)
+							{
+								EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerCharacter::MoveTrigger);
+							}
+
+							// Binds the interact action to the triggered function
+							if (InteractAction)
+							{
+								EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &APlayerCharacter::InteractTrigger);
+							}
+
+							// Binds the sprint action to the trigger for starting, and the completed to the end function
+							if (SprintAction)
+							{
+								EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Started, this, &APlayerCharacter::SprintTrigger);
+								EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Completed, this, &APlayerCharacter::SprintEnd);
+								EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Canceled, this, &APlayerCharacter::SprintEnd);
+							}
+							
+						} 
+					}
+
+					void APlayerCharacter::InitialiseMovementComponent()
+					{
+						// Gets and caches the movement component for use 
+						if (UCharacterMovementComponent* CharacterMovementComp = GetCharacterMovement())
+						{
+							MovementComponent = CharacterMovementComp;
+						}
+					}
+
+					void APlayerCharacter::MoveTrigger(const FInputActionValue& Value)
+					{
+						const FVector2D MovementVector = Value.Get<FVector2D>();
+						
+						// Movement for X vector
+						AddMovementInput(FVector(1, 0, 0), MovementVector.X);
+
+						// Movement for Y vector
+						AddMovementInput(FVector(0, 1, 0), MovementVector.Y);
+					}
+
+					void APlayerCharacter::SprintTrigger()
+					{
+						if (MovementComponent)
+						{
+							// Sets the movement speed to be the sprint speed on sprint start
+							MovementComponent->MaxWalkSpeed = SprintSpeed;
+						}
+					}
+
+					void APlayerCharacter::SprintEnd()
+					{
+						if (MovementComponent)
+						{
+							// Sets the movement speed to be the walk speed on the sprint end
+							MovementComponent->MaxWalkSpeed = WalkSpeed;
+						}
+					}
+
+					void APlayerCharacter::InteractTrigger()
+					{
+						UE_LOG(LogTemp, Warning, TEXT("The player has interacted with something"))
+					}
+
+				</code>
+			</pre>
+			</div>
+
+		</section>
+		
+
+		<!-- A go back button to go to the homeback page -->
+		<div class = "go-back">
+			<a href = "TFCOE.html">
+				<span>Go Back</span>
+			</a>				
+		</div>
+
+    </main>
+
+	<script>
+		const lightbox = document.getElementById('lightbox');
+		const lightboxImg = document.getElementById('lightbox-img');
+		const closeBtn = document.querySelector('.close');
+		const images = Array.from(document.querySelectorAll('.media-item img'));
+		const prevBtn = document.querySelector('.prev');
+		const nextBtn = document.querySelector('.next');
+
+		let currentIndex = 0;
+
+		// Open the lightbox when an image is clicked
+		images.forEach((img, index) => {
+			img.addEventListener('click', () => {
+			currentIndex = index;
+			showImage();
+			lightbox.style.display = 'flex';
+			});
+		});
+
+		// Function to show the image at currentIndex
+		function showImage() {
+			lightboxImg.src = images[currentIndex].src;
+		}
+
+		// Next and previous buttons
+		nextBtn.addEventListener('click', (e) => {
+			e.stopPropagation(); // prevent closing the lightbox when clicking button
+			currentIndex = (currentIndex + 1) % images.length;
+			showImage();
+		});
+
+		prevBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			currentIndex = (currentIndex - 1 + images.length) % images.length;
+			showImage();
+		});
+
+		// Close when clicking the "×"
+		closeBtn.addEventListener('click', () => {
+			lightbox.style.display = 'none';
+		});
+
+		// Close when clicking outside the image
+		lightbox.addEventListener('click', (e) => {
+			if (e.target === lightbox) {
+			lightbox.style.display = 'none';
+			}
+		});
+</script>
+
+</body>
+
+
+
+</html>

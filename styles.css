@@ -1073,3 +1073,39 @@ nav .right a span /*Creates a little padding between the icon and the texts of t
 {
 	display: none;
 }
+
+.code-container {
+  display: flex;
+  gap: 20px;             
+  flex-wrap: wrap;       
+}
+
+pre {
+  background: #1e1e1e;
+  color: #dcdcdc;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  overflow: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  width: 50%;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-left: 6px solid #007acc;
+  white-space: pre;  
+  
+  width: fit-content;
+
+
+  flex: 1 1 45%; 
+  min-width: 600px; 
+  max-height: 1250px;     
+  margin-top: 20px;
+}
+
+code {
+  display: block;
+  white-space: pre;    
+  margin-left: -19ch;     
+  tab-size: 4;
+}
