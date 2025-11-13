@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+		  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+		  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="styles.css">
+
+	<title> Conor Kirkby | tfcoe:devlog2 </title>
+</head>
+
+<body>
+	<!-- NAVBAR -->
+	<nav>
+	
+		<div class="left">
+			<a href="index.html">Conor Kirkby</a>
+		</div>
+
+		<div class="right">
+
+			<!-- Navbar for github icon -->
+			<a href="https://github.com/CKirkby" target="_blank" rel="noopener noreferrer">
+				<i class="fa-brands fa-github"></i> <!-- Github icon -->
+				<span>Github</span>
+			</a>
+
+			<!-- Navbar for linkedin icon -->
+			<a href="https://www.linkedin.com/in/conor-kirkby-1ba479250" target="_blank" rel="noopener noreferrer">
+				<i class="fa-brands fa-linkedin"></i> <!-- linkedin icon -->
+				<span>LinkedIn</span>
+			</a>
+
+			<!-- Navbar for Email icon -->
+			<a href="mailto:conorkirkby1121@gmail.com" target="_blank">
+				<i class="fa-solid fa-envelope"></i> <!-- Envelope icon -->
+				<span>Email</span>
+			</a>
+
+			<!-- link to CV -->
+			<a href="cv.html">
+				<i class="fa-regular fa-file"></i> <!-- File Icon -->
+				<span>CV</span>
+			</a>
+		</div>
+
+
+	</nav>
+
+    <main>
+		<div class = ProjectTitle>
+			<h2>TFCOE: Devlog #2</h2>
+			<h3>Conor Kirkby</h3>
+			<h3>13/11/25</h3>
+		</div>
+
+		 <!-- horizontal media scroll section -->
+  		<section class="media-section">
+			<div class="media-scroll">
+
+				<div class="media-item">
+					<iframe 
+					src="https://www.youtube.com/embed/m5ACqG9RGb4?si=xIoM49r-U04rRPv7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>" 
+					title="Devlog2"
+					allowfullscreen>
+					</iframe>
+				</div>
+			</div>
+
+			<p>Click to Enlarge</p>
+
+				<!-- Lightbox overlay -->
+			<div id="lightbox" class="lightbox">
+				<span class="close">&times;</span>
+				<img class="lightbox-content" id="lightbox-img">
+
+				<button class="prev">&#10094;</button>
+ 				<button class="next">&#10095;</button>
+			</div>
+
+  		</section>
+
+		<section class = "project-description-section">
+
+			<h2>TLDR</h2>
+			<Ul>
+				<li>Setup Multiple frameworks for the gameplay systems</li>
+				<li>Created a foundation for a player inventory</li>
+				<li>Created the board piece base for the combat section</li>
+				<li>Created a system that will switch between free control towards the turn based combat system</li>
+				<li>Setup the foundation for a combat manager</li>
+			</Ul>
+			
+			<h2>What Happened</h2>
+
+			<p>
+				Hey everyone!. This time, I spent my effort crafting the foundation for the gameplay systems. To start off and get me in the mood I started with something simple, that being a simple player 
+				inventory system. Using dictionaries, I created storage for both general items and key items and the relevant functions to add to them. I made this into an actor component so it can be added to any 
+				character in the future including the functionality for drops on enemies.
+			</p>
+			
+			<p>
+				Following this I created another actor component to be attached to the game mode which will manage the combat. Including the current state of the game, and though it isnt there at this moment, the queue order
+				and anything combat related. Frustratingly this is actually what caused the most trouble for me as for some reason when I tried to create an enum for the combat state, any blueprint usages would completely corrupt
+				upon reload of the engine which didnt make sense as other enums exist and work perfectly fine. I struggled with this for nearly 2 days before I finally gave up and decided to subsitute an int variable. 0 meaning combat is not
+				currently in progress and 1 for it is. 
+			</p>
+
+			<p>
+				Now with a way to control the combat state of the game, I could begin to build the player controls for this. The player would need to switch between free movement to only being able to move with each click. I know also that
+				player controllers and AI Controllers do not typically mesh well on Unreal and any AI input would most likely be ignored from a player character. Thus I divised a sneaky way around this. When combat is initiated, a dummy player
+				which is a seperate actor mimickng the player but is an AI will be spawned in the exact location and rotation as the player. The normal player will then be hidden and their controls locked off. The new AI could now be controlled with 
+				mouse clicks and then when combat is over it will be destroyed and the player restored control and visuals in exact the same location as where the AI dummy ended. As of right now for testing it was
+				allowed free roam with clicks, this of course will not be the case in the future, only allowing movement on board pieces. The camera also is among the next steps as it needs to turn from a locked perspective into a 
+				free moving camera seperate from the player.
+			</p>
+
+			<p>
+				To finish off I quickly created a base template for the board pieces, they are in no way close to what I want them to act as however, they are happily working now and I can click on them successfully registering input with my mouse
+			</p>
+
+		</section>
+
+		<section class = "project-contribution-section">
+			<h2>Code</h2>
+
+			<!-- Highlight.js stylesheet (choose a theme you like) -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+
+			<!-- Highlight.js core script -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+			<!-- Enable C++ highlighting -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+
+			<script>hljs.highlightAll();</script>
+			
+			<div class="carousel-wrapper">
+				<div class="code-carousel"> 
+
+					<div class="code-pair"> <!--Player Character Script-->
+						<h3 class="code-title">Player Character Script</h3>
+						<div class="code-container">
+							<pre>
+								<code class="language-cpp">
+									// Created by Snow Paw Games
+
+									#pragma once
+
+									#include "CoreMinimal.h"
+									#include "PaperZDCharacter.h"
+									#include "EnhancedInputSubsystems.h"
+									#include "PlayerCharacter.generated.h"
+
+									class UCharacter_Inventory;
+									/**
+									* 
+									*/
+									UCLASS()
+									class TFCOE_API APlayerCharacter : public APaperZDCharacter
+									{
+										GENERATED_BODY()
+
+										APlayerCharacter();
+
+									public:
+
+										DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBoardPieceClicked, AActor*, BoardPiece);
+										UPROPERTY(BlueprintAssignable, Category="Events")
+										FOnBoardPieceClicked OnBoardPieceClicked;
+
+										protected:
+
+										// Input Mapping & Actions // 
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input|MappingContext")
+										UInputMappingContext* MappingContext = nullptr;
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input|Actions")
+										UInputAction* MoveAction = nullptr;
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input|Actions")
+										UInputAction* SprintAction = nullptr;
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input|Actions")
+										UInputAction* InteractAction = nullptr;
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input|Actions")
+										UInputAction* CombatClickAction = nullptr;
+
+										// Settings
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings|Movement")
+										bool MovementEnabled = true;
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings|Movement")
+										bool CameraMovementEnabled = false;
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings|Movement")
+										float WalkSpeed = 400.0f;
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings|Movement")
+										float SprintSpeed = 700.0f;
+
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings|Combat")
+										TSoftClassPtr<AActor> CombatPlayer;
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings|Combat")
+										bool CombatModeActivated = false;
+										UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Settings|Combat")
+										AActor* AIPlayerDummy = nullptr;
+
+										// Components
+										UPROPERTY()
+										UCharacterMovementComponent* MovementComponent = nullptr;
+										UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+										UCharacter_Inventory* CharacterInventory = nullptr;
+										
+										// Functions
+										virtual void BeginPlay() override;
+										virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+										void InitialiseMovementComponent();
+
+										UFUNCTION(BlueprintCallable, Category = "Settings")
+										void UpdatePlayerCombatState(bool CombatEnabled);
+										
+										// Input Functions
+										void MoveTrigger(const FInputActionValue& Value);
+										void ResetMovement();
+										void SprintTrigger();
+										void SprintEnd();
+										void InteractTrigger();
+
+										void CombatClickTrigger();
+
+										// Getter & Setter
+										UCharacter_Inventory* GetInventory() const
+										{
+											return CharacterInventory;
+										}
+
+										UFUNCTION(BlueprintCallable, Category = "Settings")
+										void SetLocomotion(const bool EntityMovement, const bool CameraMovement)
+										{
+											MovementEnabled = EntityMovement;
+											CameraMovementEnabled = CameraMovement;
+										}
+
+										UFUNCTION(BlueprintCallable, Category = "Settings")
+										AActor* GetPlayerAIDummy() const
+										{
+											return AIPlayerDummy;
+										}
+									};
+
+
+								</code>
+							</pre>
+							<pre>
+								<code class="language-cpp">
+
+									// Created by Snow Paw Games
+
+									#include "PlayerCharacter.h"
+
+									#include "Character_Inventory.h"
+									#include "EnhancedInputComponent.h"
+									#include "Engine/AssetManager.h"
+									#include "GameFramework/CharacterMovementComponent.h"
+
+
+									APlayerCharacter::APlayerCharacter()
+									{
+										CharacterInventory = CreateDefaultSubobject<UCharacter_Inventory>(TEXT("Character Inventory"));
+									}
+
+									void APlayerCharacter::BeginPlay()
+									{
+										Super::BeginPlay();
+
+										// Gets the movement component and stores it for future use.
+										InitialiseMovementComponent();
+									}
+
+									// Initialises the player input system
+									void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+									{
+										Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+										if (const APlayerController* PlayerController = Cast<APlayerController>(GetController()))
+										{
+											if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
+											{
+												if (MappingContext)
+												{
+													Subsystem->AddMappingContext(MappingContext, 0);
+												}
+											}
+										}
+
+										// Initialises the action bindings 
+										if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
+										{
+											// Insert Action bindings here
+
+											// Binds the movement action to the input variables
+											if (MoveAction)
+											{
+												EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerCharacter::MoveTrigger);
+												EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Canceled, this, &APlayerCharacter::ResetMovement);
+												EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Completed, this, &APlayerCharacter::ResetMovement);
+											}
+
+											// Binds the interact action to the triggered function
+											if (InteractAction)
+											{
+												EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &APlayerCharacter::InteractTrigger);
+											}
+
+											// Binds the sprint action to the trigger for starting, and the completed to the end function
+											if (SprintAction)
+											{
+												EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Started, this, &APlayerCharacter::SprintTrigger);
+												EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Completed, this, &APlayerCharacter::SprintEnd);
+												EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Canceled, this, &APlayerCharacter::SprintEnd);
+											}
+
+											if (CombatClickAction)
+											{
+												EnhancedInputComponent->BindAction(CombatClickAction, ETriggerEvent::Started, this, &APlayerCharacter::CombatClickTrigger);
+											}
+											
+										} 
+									}
+
+									void APlayerCharacter::InitialiseMovementComponent()
+									{
+										// Gets and caches the movement component for use 
+										if (UCharacterMovementComponent* CharacterMovementComp = GetCharacterMovement())
+										{
+											MovementComponent = CharacterMovementComp;
+										}
+									}
+
+									void APlayerCharacter::UpdatePlayerCombatState(const bool CombatEnabled)
+									{
+										if (APlayerController* PlayerController = Cast<APlayerController>(GetController()))
+										{
+											if (CombatEnabled)
+											{
+												// The combat mode is enabled, the player will no longer be visible and the dummy player will activate
+												CombatModeActivated = true;
+												SetLocomotion(false, true);
+												PlayerController->bShowMouseCursor = true;
+
+												// Async loads the dummy player character for use with the combat systems. 
+												UAssetManager::GetStreamableManager().RequestAsyncLoad(CombatPlayer.ToSoftObjectPath(), FStreamableDelegate::CreateLambda([this]
+												{
+													if (UClass* LoadedClass = Cast<UClass>(CombatPlayer.Get()))
+													{
+														AIPlayerDummy = GetWorld()->SpawnActor<AActor>(LoadedClass, GetActorLocation(), GetActorRotation());
+													}
+													else
+													{
+														UE_LOG(LogTemp, Error, TEXT("Player Character: Attempt to load AI player, Loaded Class failure"))
+													}
+												}));
+
+												// Sets the main player to be hidden in the game so that it cannot interfere
+												SetActorHiddenInGame(true);
+											}
+											else
+											{
+												// Combat is over or not activated, the player will return to visibility and control restored. 
+												CombatModeActivated = false;
+												SetLocomotion(true, false);
+												PlayerController->bShowMouseCursor = false;
+
+												// Places the hidden player in the exact spot as the AI dummy so that it can resume control seemlessly
+												if (AIPlayerDummy)
+												{
+													SetActorLocation(AIPlayerDummy->GetActorLocation());
+													SetActorRotation(AIPlayerDummy->GetActorRotation());
+
+													AIPlayerDummy->Destroy();
+												}
+												
+												SetActorHiddenInGame(false);
+											}
+										}
+									}
+
+									void APlayerCharacter::MoveTrigger(const FInputActionValue& Value)
+									{
+										const FVector2D MovementVector = Value.Get<FVector2D>();
+										
+										if (!MovementEnabled)
+										{
+											ResetMovement();
+											return;
+										}
+										
+										// Movement for X vector
+										AddMovementInput(FVector(1, 0, 0), MovementVector.X);
+
+										// Movement for Y vector
+										AddMovementInput(FVector(0, 1, 0), MovementVector.Y);
+									}
+
+									void APlayerCharacter::ResetMovement()
+									{
+										MovementComponent->StopMovementImmediately();
+									}
+
+									void APlayerCharacter::SprintTrigger()
+									{
+										if (MovementComponent)
+										{
+											// Sets the movement speed to be the sprint speed on sprint start
+											MovementComponent->MaxWalkSpeed = SprintSpeed;
+										}
+									}
+
+									void APlayerCharacter::SprintEnd()
+									{
+										if (MovementComponent)
+										{
+											// Sets the movement speed to be the walk speed on the sprint end
+											MovementComponent->MaxWalkSpeed = WalkSpeed;
+										}
+									}
+
+									void APlayerCharacter::InteractTrigger()
+									{
+										UE_LOG(LogTemp, Warning, TEXT("The player has interacted with something"))
+										CharacterInventory->AddToGeneralItems("Scrap", FMath::RandRange(1, 4));
+
+										const int* Amount = CharacterInventory->GetGeneralItemList().Find("Scrap");
+										UE_LOG(LogTemp, Error, TEXT("You now have %i Scrap metal"), *Amount)
+									}
+
+									void APlayerCharacter::CombatClickTrigger()
+									{
+										if (const APlayerController* PlayerController = Cast<APlayerController>(GetController()))
+										{
+											// Creates an array of types to search for. Only want world dynamic to be triggered
+											TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypes;
+											ObjectTypes.Add(UEngineTypes::ConvertToObjectType(ECC_WorldDynamic));
+
+											// Checks what the mouse is clicking on, the aim is to detect board pieces only
+											FHitResult HitResult;
+											PlayerController->GetHitResultUnderCursorForObjects(ObjectTypes, false, HitResult);
+
+											if (HitResult.bBlockingHit)
+											{
+												// Broadcasts back to blueprints which was hit, where then I can do checks etc...
+												OnBoardPieceClicked.Broadcast(HitResult.GetActor());
+											}
+										}
+									}
+								</code>
+
+							</pre>
+						</div>
+						<h3 class="code-title">Player Character Script</h3>
+					</div>
+
+					<div class="code-pair"> <!-- Combat Manager Script-->
+						<h3 class="code-title">Combat Manager Script</h3>
+						<div class="code-container">
+							<pre>
+								<code class="language-cpp">
+
+									// Created by Snow Paw Games
+
+									#pragma once
+
+									#include "CoreMinimal.h"
+									#include "Components/ActorComponent.h"
+									#include "CombatManager.generated.h"
+
+									UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
+									class TFCOE_API UCombatManager : public UActorComponent
+									{
+										GENERATED_BODY()
+
+									public:	
+										UCombatManager();
+
+										DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCombatBegin);
+										UPROPERTY(BlueprintAssignable, Category="Events")
+										FOnCombatBegin OnCombatBegin;
+
+										DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCombatEnd);
+										UPROPERTY(BlueprintAssignable, Category="Events")
+										FOnCombatEnd OnCombatEnd;
+
+									protected:
+										virtual void BeginPlay() override;
+
+										UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Settings")
+										int CurrentCombatState = 0;
+
+									public:	
+										virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+										
+										/**
+										* 0 -> Disengaged
+										* 1 -> Engaged
+										* @param CombatState The state to set the combat into. 
+										*/
+										UFUNCTION(BlueprintCallable, Category="Combat")
+										void SetCombatState(int CombatState);
+
+										UFUNCTION(BlueprintCallable, Category="Combat")
+										int GetCombatState() const
+										{
+											return CurrentCombatState;
+										}
+									};
+
+								</code>
+							</pre>
+							<pre>
+								<code class="language-cpp">
+									// Created by Snow Paw Games
+
+									#include "CombatManager.h"
+
+									UCombatManager::UCombatManager()
+									{
+										PrimaryComponentTick.bCanEverTick = false;
+									}
+
+									void UCombatManager::BeginPlay()
+									{
+										Super::BeginPlay();
+									}
+
+									void UCombatManager::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+									{
+										Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+										//Tick turned off
+									}
+
+									void UCombatManager::SetCombatState(const int CombatState)
+									{
+										// Tracks the current state of the game
+										CurrentCombatState = CombatState;
+
+										// 0 -> Disengaged
+										// 1 -> Engaged
+										switch (CombatState)
+										{
+										case 0:
+											OnCombatEnd.Broadcast();
+											break;
+										case 1:
+											OnCombatBegin.Broadcast();
+											break;
+										default:
+											OnCombatEnd.Broadcast();
+										}
+									}
+								</code>
+							</pre>
+						</div>
+						<h3 class="code-title">Combat Manager Script</h3>
+					</div>
+
+					<div class="code-pair"> <!-- Player Inventory Script-->
+						<h3 class="code-title">Player Inventory Script</h3>
+						<div class="code-container">
+							<pre>
+								<code class="language-cpp">
+									// Created by Snow Paw Games
+
+									#pragma once
+
+									#include "CoreMinimal.h"
+									#include "Components/ActorComponent.h"
+									#include "Character_Inventory.generated.h"
+
+
+									UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+									class TFCOE_API UCharacter_Inventory : public UActorComponent
+									{
+										GENERATED_BODY()
+
+									public:	
+										// Sets default values for this component's properties
+										UCharacter_Inventory();
+
+									protected:
+										// A map that contains the regular items and their amount.
+										UPROPERTY(BlueprintReadOnly, Category = "Inventory")
+										TMap<FName, int> GeneralItems = {};
+
+										// A map that contains any key items. 
+										UPROPERTY(BlueprintReadOnly, Category = "Inventory")
+										TMap<FName, int> KeyItems = {};
+
+									public:
+										
+										// Adds to the regular inventory
+										UFUNCTION(BlueprintCallable, Category = "Inventory")
+										void AddToGeneralItems(const FName KeyID, const int ItemCount);
+
+										// Adds to the key items inventory
+										UFUNCTION(BlueprintCallable, Category = "Inventory")
+										void AddToKeyItems(const FName KeyID, const int ItemCount);
+										
+										// Getters and Setters // 
+										
+										UFUNCTION(BlueprintCallable, Category = "Inventory")
+										TMap<FName, int> GetGeneralItemList() const
+										{
+											return GeneralItems;
+										}
+
+										UFUNCTION(BlueprintCallable, Category = "Inventory")
+										TMap<FName, int> GetKeyItemList() const
+										{
+											return KeyItems;
+										}
+									};
+								</code>
+							</pre>
+							<pre>
+								<code class="language-cpp">
+									// Created by Snow Paw Games
+
+									#include "Character_Inventory.h"
+
+									// Sets default values for this component's properties
+									UCharacter_Inventory::UCharacter_Inventory()
+									{
+
+									}
+
+									void UCharacter_Inventory::AddToGeneralItems(const FName KeyID, const int ItemCount)
+									{
+										if (GeneralItems.Contains(KeyID))
+										{
+											if (const int* CurrentItemCount = GeneralItems.Find(KeyID))
+											{
+												const int NewItemCount = *CurrentItemCount + ItemCount;
+												GeneralItems[KeyID] = NewItemCount;
+											}
+										}
+										else
+										{
+											GeneralItems.Add(KeyID, ItemCount);
+										}
+									}
+
+									void UCharacter_Inventory::AddToKeyItems(const FName KeyID, const int ItemCount)
+									{
+										if (KeyItems.Contains(KeyID))
+										{
+											if (const int* CurrentItemCount = KeyItems.Find(KeyID))
+											{
+												const int NewItemCount = *CurrentItemCount + ItemCount;
+												KeyItems[KeyID] = NewItemCount;
+											}
+										}
+										else
+										{
+											KeyItems.Add(KeyID, ItemCount);
+										}
+									}
+								</code>
+							</pre>
+						</div>
+						<h3 class="code-title">Player Inventory Script</h3>
+					</div>
+
+					<div class="code-pair"> <!-- Board Piece Script-->
+						<h3 class="code-title">Board Piece Script</h3>
+						<div class="code-container">
+							<pre>
+								<code class="language-cpp">
+									// Created by Snow Paw Games
+
+									#pragma once
+
+									#include "CoreMinimal.h"
+									#include "GameFramework/Actor.h"
+									#include "BoardPiece.generated.h"
+
+									class UBoxComponent;
+
+									UENUM(BlueprintType)
+									enum EPieceState
+									{
+										Enabled UMETA(DisplayName = "Enabled"),
+										Disabled UMETA(DisplayName = "Disabled"),
+										Occupied UMETA(DisplayName = "Occupied"),
+									};
+
+									UCLASS()
+									class TFCOE_API ABoardPiece : public AActor
+									{
+										GENERATED_BODY()
+										
+									public:	
+										ABoardPiece();
+
+									protected:
+										
+										UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings")
+										TEnumAsByte<EPieceState> CurrentPieceState = Enabled;
+										
+										virtual void BeginPlay() override;
+
+									public:
+
+
+										// Getter and Setter
+
+										UFUNCTION(BlueprintCallable, Category = "Board Piece")
+										void SetPieceState(const EPieceState NewPieceState)
+										{
+											CurrentPieceState = NewPieceState;
+										}
+
+									};
+
+								</code>
+							</pre>
+							<pre>
+								<code class="language-cpp">
+									// Created by Snow Paw Games
+
+									#include "BoardPiece.h"
+
+									ABoardPiece::ABoardPiece()
+									{
+
+									}
+
+									void ABoardPiece::BeginPlay()
+									{
+										Super::BeginPlay();
+									}
+								</code>
+							</pre>
+						</div>
+						<h3 class="code-title">Board Piece Script</h3>
+				</div>
+			</div>
+				
+			</div>
+
+			<!-- Navigation buttons -->
+			<div class="nav-buttons">
+				<button class="prev-btn">&#8592;</button>
+				<button class="next-btn">&#8594;</button>
+			</div>
+
+		</section>
+		
+
+		<!-- A go back button to go to the homeback page -->
+		<div class = "go-back">
+			<a href = "TFCOE.html">
+				<span>Go Back</span>
+			</a>				
+		</div>
+
+    </main>
+
+	<script>
+		const lightbox = document.getElementById('lightbox');
+		const lightboxImg = document.getElementById('lightbox-img');
+		const closeBtn = document.querySelector('.close');
+		const images = Array.from(document.querySelectorAll('.media-item img'));
+		const prevBtn = document.querySelector('.prev');
+		const nextBtn = document.querySelector('.next');
+
+		let currentIndex = 0;
+
+		// Open the lightbox when an image is clicked
+		images.forEach((img, index) => {
+			img.addEventListener('click', () => {
+			currentIndex = index;
+			showImage();
+			lightbox.style.display = 'flex';
+			});
+		});
+
+		// Function to show the image at currentIndex
+		function showImage() {
+			lightboxImg.src = images[currentIndex].src;
+		}
+
+		// Next and previous buttons
+		nextBtn.addEventListener('click', (e) => {
+			e.stopPropagation(); // prevent closing the lightbox when clicking button
+			currentIndex = (currentIndex + 1) % images.length;
+			showImage();
+		});
+
+		prevBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			currentIndex = (currentIndex - 1 + images.length) % images.length;
+			showImage();
+		});
+
+		// Close when clicking the "×"
+		closeBtn.addEventListener('click', () => {
+			lightbox.style.display = 'none';
+		});
+
+		// Close when clicking outside the image
+		lightbox.addEventListener('click', (e) => {
+			if (e.target === lightbox) {
+			lightbox.style.display = 'none';
+			}
+		});
+
+		const carousel = document.querySelector('.code-carousel');
+		const pairs = document.querySelectorAll('.code-pair');
+		const prevCodeBtn = document.querySelector('.prev-btn');
+		const nextCodeBtn = document.querySelector('.next-btn');
+		let currentCodeIndex = 0;
+
+		function updateCarousel() {
+		const offset = -currentCodeIndex * 100; // move by 100% per pair
+		carousel.style.transform = `translateX(${offset}%)`;
+		}
+
+		// Previous button
+		prevCodeBtn.addEventListener('click', () => {
+		if (currentCodeIndex > 0) {
+			currentCodeIndex--;
+			updateCarousel();
+		}
+		});
+
+		// Next button
+		nextCodeBtn.addEventListener('click', () => {
+		if (currentCodeIndex < pairs.length - 1) {
+			currentCodeIndex++;
+			updateCarousel();
+		}
+		});
+
+		// Optional: Highlight.js for all code blocks
+		document.querySelectorAll('pre code').forEach((el) => hljs.highlightElement(el));
+		</script>
+
+</body>
+</html>

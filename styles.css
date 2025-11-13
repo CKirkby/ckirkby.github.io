@@ -1099,13 +1099,86 @@ pre {
 
   flex: 1 1 45%; 
   min-width: 600px; 
-  max-height: 1250px;     
+  max-height: 1000px;     
   margin-top: 20px;
 }
+
 
 code {
   display: block;
   white-space: pre;    
-  margin-left: -19ch;     
+  margin-left: -37ch;     
   tab-size: 4;
+}
+
+#code-single
+{
+  display: block;
+  white-space: pre;    
+  margin-left: -20ch;     
+  tab-size: 4;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.code-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.code-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  flex-shrink: 0; /* keeps each page full-width */
+  gap: 15px;
+  padding-bottom: 20px; /* adds breathing room for buttons */
+}
+
+/* Code Buttons */
+
+.prev-btn,
+.next-btn {
+  background: #007acc;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--background-color) 0.2s ease, transform 0.1s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: #0091ea;
+  transform: scale(1.05);
+}
+
+.prev-btn:active,
+.next-btn:active {
+  transform: scale(0.95);
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 1rem;
+}
+
+.code-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #00aaff;
+  text-align: center;
+  margin-bottom: 5px;
 }
