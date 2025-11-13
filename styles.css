@@ -330,6 +330,13 @@ nav .right a span /*Creates a little padding between the icon and the texts of t
 	border-radius: 25%;
 }
 
+.projects-section .cells #tfcoe img
+{
+	width: 210px;
+	height: 200px;
+	border-radius: 25%;
+}
+
 .projects-section .view-all a span /*view all button text*/
 {
 	text-align: center;
