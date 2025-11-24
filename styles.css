@@ -757,6 +757,22 @@ nav .right a span /*Creates a little padding between the icon and the texts of t
 		width: 550px;
 		height: 850px;
 	}
+
+	.project-contribution-section
+	{
+		display: none;
+	}
+
+	.code-mobile
+	{
+		margin-top: 35px;
+		margin-left: 20px;
+
+		font-size: 20px;
+		margin-bottom: 2em;
+
+		color: var(--text-color);
+	}
 }
 
 @media (max-width: 600px) /*What will happen when the screen is reduced like on mobile*/ {
@@ -805,6 +821,7 @@ nav .right a span /*Creates a little padding between the icon and the texts of t
       iframe {
         height: 170px;
       }
+
 }
 
 
@@ -935,6 +952,18 @@ nav .right a span /*Creates a little padding between the icon and the texts of t
 	font-size: 20px;
 	margin-left: 20px;
 	margin-top: 20px;
+}
+
+.code-mobile
+{
+	margin-top: 35px;
+	margin-left: 20px;
+
+	font-size: 20px;
+	margin-bottom: 2em;
+
+	color: var(--text-color);
+	display: none;
 }
 
 /*Project Media*/
