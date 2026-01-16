@@ -98,7 +98,7 @@
 			<h2>Project description</h2>
 
 			<p>
-				Echronia is a narrative driven game heavily inspired by Final Fantasy, Undertale and interestingly enough Fallout 2. This project is extremely early in development
+				Echronia is a narrative driven game heavily inspired by Final Fantasy, Undertale and Fallout 2. This project is extremely early in development
 				and is still for the most part in the planning phase but it will be the project I work on in my personal time. The game will be a 2.5D adventure with action point, turn based combat such as those found
 				in the early fallout games and others such as wasteland, Final Fantasy tactics and to an extent Baldurs gate 3.
 			</p>
@@ -137,9 +137,32 @@
 			Project Lead</h3>
 
 			<ul> What I learned:
-				<li>How to use the plugin 'Paper ZD' to easily implement sprite sheets into Unreal</li>
-				<li>The creation and use of bit-flags to have a multichoice selectable enum</li>
-				<li>Incorporating Unreal's interfaces into C++ and the use of them</li>
+				<li>How to use the plugin 'Paper ZD' to easily implement sprite sheets into Unreal.</li>
+				<li>The creation and use of bit-flags to have a multichoice selectable enum.</li>
+				<li>Incorporating Unreal's interfaces into C++ and the use of them.</li>
+				<li>How to do grid mathmatics using various functions such as the Chebyshev and Manhattan methods for movement, attacks and distance calculations.</li>
+				<li>Different types of grid based pathfinding methods that are available to me such as Breadth-first search, A* and Dijkstras Algorithm</li>
+				<li>How to use data assets to create a customisable, universal configuration for the AI to use for things such as health, movement speed, attacks, behaviours and any other data I wish to use for them that 
+					can be spread across all enemies of that type. 
+				</li>
+			</ul>
+
+			<ul> What I contributed:
+				<li>Project planning, using tools such as trello, GitHub and obsidian to design the game.</li>
+				<li>Creation of an indepth lore for the game. Including locations, characters, factions and backstories</li>
+				<li>Development of the player character.</li>
+				<li>Development of the prototype AI using turn based tactics with desicion based intellegence.</li>
+				<li>Development of grid based mechanics and mathmathical calculations using the Chebyshev and Manhattan methods.</li>
+				<li>Developed an A* pathfinding system for the movement</li>
+			</ul>
+			
+			<ul>What I overcame:
+				<li>
+					The grid based maths was really difficult at first. I had little to no experience with this type of maths and had to learn all of it from scratch and a lot of trial and error. It got even more difficult when 
+					it was time to implement the pathfinding system.
+					Based on research I got the idea that A* is generally the best method, although it takes more to setup, it generally is more performant as BFS from my understanding acts as a ripple that 
+					searches across the board whereas A* calculates the best path to the object based on deseriable traits such as distance and cost to move.
+				</li>
 			</ul>
 
 			<h2>Bio</h2>
