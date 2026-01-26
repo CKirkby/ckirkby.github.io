@@ -649,13 +649,25 @@ nav .right a span /*Creates a little padding between the icon and the texts of t
 .cv-section
 {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 
 }
 
 .cv-section img
 {
 	margin-top: 75px;
+	margin-left: 5px;
+
+	width: 700px;
+	height: 1000px;
+}
+
+#cvimg2
+{
+	margin-top: 10px;
+	margin-left: 5px;
 
 	width: 700px;
 	height: 1000px;
