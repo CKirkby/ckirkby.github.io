@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+		  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+		  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="styles.css">
+
+	<title> Conor Kirkby | Sanji-bot </title>
+</head>
+
+<body>
+	<!-- NAVBAR -->
+	<nav>
+	
+		<div class="left">
+			<a href="index.html">Conor Kirkby</a>
+		</div>
+
+		<div class="right">
+
+			<!-- Navbar for github icon -->
+			<a href="https://github.com/CKirkby" target="_blank" rel="noopener noreferrer">
+				<i class="fa-brands fa-github"></i> <!-- Github icon -->
+				<span>Github</span>
+			</a>
+
+			<!-- Navbar for linkedin icon -->
+			<a href="https://www.linkedin.com/in/conor-kirkby-1ba479250" target="_blank" rel="noopener noreferrer">
+				<i class="fa-brands fa-linkedin"></i> <!-- linkedin icon -->
+				<span>LinkedIn</span>
+			</a>
+
+			<!-- Navbar for Email icon -->
+			<a href="mailto:conorkirkby1121@gmail.com" target="_blank">
+				<i class="fa-solid fa-envelope"></i> <!-- Envelope icon -->
+				<span>Email</span>
+			</a>
+
+			<!-- link to CV -->
+			<a href="cv.html">
+				<i class="fa-regular fa-file"></i> <!-- File Icon -->
+				<span>CV</span>
+			</a>
+		</div>
+
+
+	</nav>
+
+    <main>
+		<div class = ProjectTitle>
+			<h2>Discord bot: Sanji-San</h2>
+			<h3>Conor Kirkby</h3>
+		</div>
+
+		 <!-- horizontal media scroll section -->
+  		<section class="media-section">
+			<div class="media-scroll">
+
+				<div class="media-item">
+					<img src="images/Sanjibot/sanjibothello.webp" alt="enemyconfigs">
+				</div>
+
+				<div class="media-item">
+					<img src="images/Sanjibot/sanjibot21770643693.webp" alt="enemyconfigs">
+				</div>
+
+				<div class="media-item">
+					<img src="images/Sanjibot/sanjibot31770643693.webp" alt="enemyconfigs">
+				</div>
+
+				<div class="media-item">
+					<img src="images/Sanjibot/sanjibot41770643693.webp" alt="enemyconfigs">
+				</div>
+
+				<div class="media-item">
+					<img src="images/Sanjibot/sanjibot51770643693.webp" alt="enemyconfigs">
+				</div>
+
+				<div class="media-item">
+					<img src="images/Sanjibot/sanjibot61770643693.webp" alt="enemyconfigs">
+				</div>
+
+				<div class="media-item">
+					<img src="images/Sanjibot/sanjibot71770643693.webp" alt="enemyconfigs">
+				</div>
+
+			</div>
+
+			<p>Click to Enlarge</p>
+
+				<!-- Lightbox overlay -->
+			<div id="lightbox" class="lightbox">
+				<span class="close">&times;</span>
+				<img class="lightbox-content" id="lightbox-img">
+
+				<button class="prev">&#10094;</button>
+ 				<button class="next">&#10095;</button>
+			</div>
+
+  		</section>
+
+		<section class = "project-description-section">
+
+			<h2>Quick Note:</h2>
+			<p>This is a project only intended for private use, I do not own any of the images or recipes and do not claim them, thank you to the talented people who create the things I can use</p>
+
+			<h2>TLDR</h2>
+			<Ul>
+				<li>Discord bot that stores recipes</li>
+				<li>Learned how to set this up using discord library in python</li>
+				<li>Using json files to create a local database of recipes</li>
+				<li>Can store recipes through the use of storing URL's to the online recipe into the json file</li>
+				<li>Can recieve recipes either specifically, random per tag, or completely random</li>
+				<li>Can remove specific or delete all recipes at once</li>
+				<li>Fun hello command that quotes the character</li>
+			</Ul>
+			
+			<h2>What Happened</h2>
+
+			<p>
+				This was a fun little side project that I wanted to do for a long time. I frequently cook for myself and my partner and I usually use discord to save recipes I find on the internet. I wanted to make a bot that stored those recipes for me and then I cloudflare
+				recieve a recipe either at random or by asking the bot to provide me with the url.
+			</p>
+
+			<p>
+				One Piece is one of my favourite animes, so of course I had to model the bot based on Sanji, it just made sense. I will use this bot in private to keep track of my recipes and now I have learned so maybe I could make some more bots in the future.
+			</p>
+
+			<h2>Problems that arose</h2>
+			<ul>
+				<li>As I primarily use C++ or C#, Python was an extreme difference to me and I was really struggling to understand the syntax. I have since gotten my head around it but 
+					this was a primary cause of not understanding how the functionality works.
+				</li>
+				<li>I originally tried to use a .env file to store the discord token needed for the bot to run. However despite apparently that I correctly set it up and quadrouple checked this, the .env file still would not load the token,
+					thus I switched the system to simply use a config.py file instead.
+				</li>
+			</ul>
+
+		</section>
+
+		<section class = "project-contribution-section" id = "hide">
+			<h2>Code *Not working correctly for this devlog*</h2>
+
+			<!-- Highlight.js stylesheet (choose a theme you like) -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+
+			<!-- Highlight.js core script -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+			<!-- Enable C++ highlighting -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+
+			<script>hljs.highlightAll();</script>
+
+			<!-- Navigation buttons -->
+			<div class="nav-buttons">
+				<button class="prev-btn">&#8592;</button>
+				<button class="next-btn">&#8594;</button>
+			</div>
+
+		</section>
+		
+		<div class = "code-mobile">Code blocks / snippets available on desktop.</div>
+
+		<!-- A go back button to go to the homeback page -->
+		<div class = "go-back">
+			<a href = "TFCOE.html">
+				<span>Go Back</span>
+			</a>				
+		</div>
+
+    </main>
+
+	<script>
+		const lightbox = document.getElementById('lightbox');
+		const lightboxImg = document.getElementById('lightbox-img');
+		const closeBtn = document.querySelector('.close');
+		const images = Array.from(document.querySelectorAll('.media-item img'));
+		const prevBtn = document.querySelector('.prev');
+		const nextBtn = document.querySelector('.next');
+
+		let currentIndex = 0;
+
+		// Open the lightbox when an image is clicked
+		images.forEach((img, index) => {
+			img.addEventListener('click', () => {
+			currentIndex = index;
+			showImage();
+			lightbox.style.display = 'flex';
+			});
+		});
+
+		// Function to show the image at currentIndex
+		function showImage() {
+			lightboxImg.src = images[currentIndex].src;
+		}
+
+		// Next and previous buttons
+		nextBtn.addEventListener('click', (e) => {
+			e.stopPropagation(); // prevent closing the lightbox when clicking button
+			currentIndex = (currentIndex + 1) % images.length;
+			showImage();
+		});
+
+		prevBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			currentIndex = (currentIndex - 1 + images.length) % images.length;
+			showImage();
+		});
+
+		// Close when clicking the "×"
+		closeBtn.addEventListener('click', () => {
+			lightbox.style.display = 'none';
+		});
+
+		// Close when clicking outside the image
+		lightbox.addEventListener('click', (e) => {
+			if (e.target === lightbox) {
+			lightbox.style.display = 'none';
+			}
+		});
+
+		const carousel = document.querySelector('.code-carousel');
+		const pairs = document.querySelectorAll('.code-pair');
+		const prevCodeBtn = document.querySelector('.prev-btn');
+		const nextCodeBtn = document.querySelector('.next-btn');
+		let currentCodeIndex = 0;
+
+		function updateCarousel() {
+		const offset = -currentCodeIndex * 100; // move by 100% per pair
+		carousel.style.transform = `translateX(${offset}%)`;
+		}
+
+		// Previous button
+		prevCodeBtn.addEventListener('click', () => {
+		if (currentCodeIndex > 0) {
+			currentCodeIndex--;
+			updateCarousel();
+		}
+		});
+
+		// Next button
+		nextCodeBtn.addEventListener('click', () => {
+		if (currentCodeIndex < pairs.length - 1) {
+			currentCodeIndex++;
+			updateCarousel();
+		}
+		});
+
+		// Optional: Highlight.js for all code blocks
+		document.querySelectorAll('pre code').forEach((el) => hljs.highlightElement(el));
+		</script>
+
+</body>
+</html>
